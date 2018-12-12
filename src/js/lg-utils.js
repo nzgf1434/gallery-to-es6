@@ -99,11 +99,11 @@ var utils = {
         }
 
         events.split(' ').forEach(event => {
-            var _id = el.getAttribute('lg-event-uid') || '';
-            utils.Listener.uid++;
-            _id += '&' + utils.Listener.uid;
-            el.setAttribute('lg-event-uid', _id);
-            utils.Listener[event + utils.Listener.uid] = fn;
+            var _id = el.getAttribute('lg-event-uid') || '';// НАХУЯ?!!!
+            utils.Listener.uid++;                           // НАХУЯ?!!!
+            _id += '&' + utils.Listener.uid;                // НАХУЯ?!!!
+            el.setAttribute('lg-event-uid', _id);           // НАХУЯ?!!!
+            utils.Listener[event + utils.Listener.uid] = fn; // НАХУЯ?!!!
             el.addEventListener(event.split('.')[0], fn, false);
         });
     },

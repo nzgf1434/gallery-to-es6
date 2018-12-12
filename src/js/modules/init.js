@@ -1,11 +1,10 @@
 export default function initModul() {
 
     var _this = this;
-
     // s.preload should not be more than $item.length
-    if (_this.s.preload > _this.items.length) {
-        _this.s.preload = _this.items.length;
-    }
+    // if (_this.s.preload > _this.items.length) {
+    //     _this.s.preload = _this.items.length;
+    // }
 
     // if dynamic option is enabled execute immediately
     var _hash = window.location.hash;
@@ -38,16 +37,16 @@ export default function initModul() {
     } else {
 
         for (var i = 0; i < _this.items.length; i++) {
-
+            
             /*jshint loopfunc: true */
-            (function(index) {
+            (function(index) {          // index - индекс __slide - фото которое нажали вначале
 
                 // Using different namespace for click because click event should not unbind if selector is same object('this')
                 utils.on(_this.items[index], 'click.lgcustom', (e) => {
 
                     e.preventDefault();
 
-                    utils.trigger(_this.el, 'onBeforeOpen');
+                    utils.trigger(_this.el, 'onBeforeOpen');  /// ДЛЯ ПЛАГИНОВ?
 
                     _this.index = _this.s.index || index;
 
